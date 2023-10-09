@@ -1,0 +1,15 @@
+.navbar {
+    background-color: #84BCDA;
+}
+body, .nav-link, .nav-link:visited {
+    color: white;
+}
+.nav-link:hover {
+    color: #e4e4e4;
+}
+.nav-item {
+    font-size: 1.5rem;
+}
+.white {
+    color: white;
+}

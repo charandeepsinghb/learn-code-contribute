@@ -1,0 +1,19 @@
+{
+  "name": "learn-code-contribute",
+  "version": "1.0.0",
+  "description": "Learn, Code and Contribute",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --no-browser --port=8090"
+  },
+  "repository": {
+    "type": "git",
+    "url": "learn-code-contribute"
+  },
+  "author": "Charandeep Singh",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
