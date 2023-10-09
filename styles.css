@@ -1,5 +1,9 @@
+:root {
+    --nav-background: #84BCDA;
+}
+
 .navbar {
-    background-color: #84BCDA;
+    background-color: var(--nav-background);
 }
 body, .nav-link, .nav-link:visited {
     color: white;
@@ -7,9 +11,9 @@ body, .nav-link, .nav-link:visited {
 .nav-link:hover {
     color: #e4e4e4;
 }
-.nav-item {
-    font-size: 1.5rem;
+.material-icons {
+    user-select: none;
 }
-.white {
-    color: white;
+.material-icons:hover {
+    cursor: pointer;
 }
