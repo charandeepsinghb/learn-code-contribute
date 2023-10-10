@@ -5,7 +5,7 @@
 .navbar {
     background-color: var(--nav-background);
 }
-body, .nav-link, .nav-link:visited {
+nav, .nav-link, .nav-link:visited {
     color: white;
 }
 .nav-link:hover {
@@ -14,6 +14,6 @@ body, .nav-link, .nav-link:visited {
 .material-icons {
     user-select: none;
 }
-.material-icons:hover {
+.material-icons:hover, .hoverCursor:hover {
     cursor: pointer;
 }

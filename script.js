@@ -1,3 +1,5 @@
+/* ******************************* Theme code ******************************** */
+
 const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 const lightIcon = document.getElementById("lightIcon");
 const darkIcon = document.getElementById("darkIcon");
@@ -26,3 +28,21 @@ darkThemeMq.addEventListener("change", e => {
         setTheme("light");
     }
 });
+
+
+/* ******************************* Get component ******************************** */
+
+const home = document.getElementById("home");
+
+function getComponent(url) {
+    $.ajax({
+        type: "GET",
+        url: url,
+        success: function (response) {
+            home.innerHTML = response;
+        },
+        error: function (response) {
+            home.innerHTML = response;
+        }
+    });
+}
