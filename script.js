@@ -1,10 +1,13 @@
 /* ******************************* Theme code ******************************** */
+const DARK_THEME_LOCAL_ITEM = "darkTheme";
+
+const localDarkMode = localStorage.getItem(DARK_THEME_LOCAL_ITEM);
 
 const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 const lightIcon = document.getElementById("lightIcon");
 const darkIcon = document.getElementById("darkIcon");
 
-if (darkThemeMq.matches) {
+if (darkThemeMq.matches || localDarkMode === "true") {
     setTheme("dark");
 } else {
     setTheme("light");
@@ -15,9 +18,11 @@ function setTheme(theme) {
     if (theme === "dark") {
         lightIcon.style.display = "inline";
         darkIcon.style.display = "none";
+        localStorage.setItem(DARK_THEME_LOCAL_ITEM, "true");
     } else {
         lightIcon.style.display = "none";
         darkIcon.style.display = "inline";
+        localStorage.setItem(DARK_THEME_LOCAL_ITEM, "false");
     }
 }
 
@@ -46,3 +51,17 @@ function getComponent(url) {
         }
     });
 }
+
+/* ******************************* Router ******************************** */
+
+function redirectByHref() {
+    const href = window.location.href;
+    if (!href.includes("#/")) {
+        getComponent("./components/main.html");
+        return;
+    }
+    const url = window.location.href.substring(href.indexOf('#') + 2) + '.html';
+
+    getComponent(url);
+}
+redirectByHref();
