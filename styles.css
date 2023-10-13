@@ -1,5 +1,6 @@
 :root {
     --nav-background: #84BCDA;
+    --nav-background-dark: hsl(201, 54%, 40%);
 }
 
 .navbar {
@@ -16,4 +17,9 @@ nav, .nav-link, .nav-link:visited {
 }
 .material-icons:hover, .hoverCursor:hover {
     cursor: pointer;
+}
+
+/* Theme based selection */
+html[data-bs-theme="dark"] .navbar {
+    background-color: var(--nav-background-dark);
 }

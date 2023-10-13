@@ -1,13 +1,13 @@
 /* ******************************* Theme code ******************************** */
 const DARK_THEME_LOCAL_ITEM = "darkTheme";
 
-const localDarkMode = localStorage.getItem(DARK_THEME_LOCAL_ITEM);
+const isLocalDarkMode = localStorage.getItem(DARK_THEME_LOCAL_ITEM);
 
 const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-const lightIcon = document.getElementById("lightIcon");
-const darkIcon = document.getElementById("darkIcon");
+const lightIconElem = document.getElementById("lightIcon");
+const darkIconElem = document.getElementById("darkIcon");
 
-if (darkThemeMq.matches || localDarkMode === "true") {
+if (darkThemeMq.matches || isLocalDarkMode === "true") {
     setTheme("dark");
 } else {
     setTheme("light");
@@ -16,12 +16,12 @@ if (darkThemeMq.matches || localDarkMode === "true") {
 function setTheme(theme) {
     document.documentElement.setAttribute("data-bs-theme", theme);
     if (theme === "dark") {
-        lightIcon.style.display = "inline";
-        darkIcon.style.display = "none";
+        lightIconElem.style.display = "inline";
+        darkIconElem.style.display = "none";
         localStorage.setItem(DARK_THEME_LOCAL_ITEM, "true");
     } else {
-        lightIcon.style.display = "none";
-        darkIcon.style.display = "inline";
+        lightIconElem.style.display = "none";
+        darkIconElem.style.display = "inline";
         localStorage.setItem(DARK_THEME_LOCAL_ITEM, "false");
     }
 }
@@ -64,4 +64,5 @@ function redirectByHref() {
 
     getComponent(url);
 }
+// When the page is loaded
 redirectByHref();
