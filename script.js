@@ -40,6 +40,9 @@ darkThemeMq.addEventListener("change", e => {
 const home = document.getElementById("home");
 
 function getComponent(url) {
+    if (isHrefUrlSame(url)) {
+        return;
+    }
     $.ajax({
         type: "GET",
         url: url,
@@ -52,6 +55,16 @@ function getComponent(url) {
     });
 }
 
+function isHrefUrlSame(url) {
+    const href = window.location.href;
+    const urlAfterHref = window.location.href.substring(href.indexOf('#') + 2);
+    if (url === "./" + urlAfterHref  + ".html") {
+        return true;
+    }
+
+    return false;
+}
+
 /* ******************************* Router ******************************** */
 
 function redirectByHref() {
@@ -60,7 +73,7 @@ function redirectByHref() {
         getComponent("./components/main.html");
         return;
     }
-    const url = window.location.href.substring(href.indexOf('#') + 2) + '.html';
+    const url = window.location.href.substring(href.indexOf('#') + 2) + ".html";
 
     getComponent(url);
 }
