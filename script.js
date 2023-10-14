@@ -35,6 +35,17 @@ darkThemeMq.addEventListener("change", e => {
 });
 
 
+/* ******************************* Toast notification ******************************** */
+
+const errorToast = Toastify({
+    text: "Error occurred",
+    duration: 2000,
+    style: {
+        background: "#ff3333",
+    },
+});
+
+
 /* ******************************* Get component ******************************** */
 
 const home = document.getElementById("home");
@@ -43,14 +54,16 @@ function getComponent(url) {
     if (isHrefUrlSame(url)) {
         return;
     }
+    overlayLoaderOn();
     $.ajax({
         type: "GET",
         url: url,
         success: function (response) {
             home.innerHTML = response;
+            overlayLoaderOff();
         },
         error: function (response) {
-            home.innerHTML = response;
+            errorToast.showToast();
         }
     });
 }
@@ -64,6 +77,7 @@ function isHrefUrlSame(url) {
 
     return false;
 }
+
 
 /* ******************************* Router ******************************** */
 
@@ -79,3 +93,14 @@ function redirectByHref() {
 }
 // When the page is loaded
 redirectByHref();
+
+
+/* ******************************* Overlay ******************************** */
+
+function overlayLoaderOn() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function overlayLoaderOff() {
+    document.getElementById("overlay").style.display = "none";
+}
