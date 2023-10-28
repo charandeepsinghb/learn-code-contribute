@@ -91,13 +91,3 @@ html[data-bs-theme="dark"] .navbar {
     z-index: 2;
 }
 
-.header-with-icon {
-    display: flex; 
-    align-items: center; 
-}
-
-.icon {
-    width: 24px;
-    height: 24px; 
-    margin-right: 8px; 
-}
