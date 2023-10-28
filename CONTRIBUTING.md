@@ -29,7 +29,7 @@ All types of contributions are encouraged and valued. See the [Table of Contents
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[Learn Code Contribute Code of Conduct](https://github.com/charandeepsinghb/learn-code-contributeblob/master/CODE_OF_CONDUCT.md).
+[Learn Code Contribute Code of Conduct](https://github.com/charandeepsinghb/learn-code-contribute/blob/master/CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code. Please report unacceptable behavior
 to <charandeeps81@gmail.com>.
 
@@ -146,13 +146,22 @@ Updating, improving and correcting the documentation
 -->
 
 ## Styleguides
+Use classes
+
 ### Commit Messages
 <!-- TODO
 
 -->
 
+## Code guides
+
+* Avoid using jQuery
+* Use Bootstrap
+
+
 ## Join The Project Team
 <!-- TODO -->
+
 
 <!-- omit in toc -->
 ## Attribution
