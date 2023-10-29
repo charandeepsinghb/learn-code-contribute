@@ -93,8 +93,7 @@ function getComponent(url) {
 }
 
 function isHrefUrlSame(url) {
-    const href = window.location.href;
-    const urlAfterHref = window.location.href.substring(href.indexOf('#') + 2);
+    const urlAfterHref = window.location.hash.substring(2);
     if (url === "./" + urlAfterHref  + ".html") {
         return true;
     }
@@ -106,19 +105,30 @@ function isHrefUrlSame(url) {
 /* ******************************* Router ******************************** */
 
 function redirectByHref() {
-    const href = window.location.href;
+    const hash = window.location.hash;
 
     // Load main component if not any
-    if (!href.includes("#/")) {
+    if (!hash) {
         getComponent("./components/main.html");
         return;
     }
-    const url = window.location.href.substring(href.indexOf('#') + 2) + ".html";
+    if (!hash.includes("#/components")) {
+        getComponent("./components/main.html");
+        return;
+    }
+    const url = hash.substring(2) + ".html";
 
     getComponent(url);
 }
 // When the page is loaded
 redirectByHref();
+
+// Router listner back forward
+
+addEventListener('popstate', (state)=>{
+    // console.log(state.currentTarget.location);
+    redirectByHref();
+});
 
 
 /* ******************************* Overlay ******************************** */
