@@ -1,0 +1,79 @@
+<h1>Git Advanced</h1>
+<br>
+
+<!-- Git Rebasing -->
+<h2>1. Git Rebasing</h2>
+<hr>
+<ul>
+    <li>Git Rebasing is a process used in version control with Git to integrate changes from one branch into another.</li>
+    <li> It allows user to move or apply a series of commits from one branch onto another branch, typically resulting in a more linear and cleaner commit history. </li>
+    <li>Rebasing is useful for maintaining a clear history and resolving conflicts between branches.</li>
+</ul>
+
+<br>
+<h2>How to Rebase ?</h2>
+<hr>
+<ol>
+    <li>Start with a base branch (e.g., master or main).</li>
+    <li>Create a feature branch.</li>
+    <li>Make your changes in the feature branch.</li>
+    <li>Move the changes from the feature branch onto the latest commit in the base branch by using below command.</li>
+    <br>
+    <pre>
+    git rebase [base_branch]
+    </pre>
+</ol>
+
+<p><b>Result :</b> The commit history looks as if the changes in the feature branch were made directly on top of the base branch, creating a more straightforward timeline.</p>
+
+<!-- Git Hooks -->
+<br>
+<h2>2. Git Hooks</h2>
+<hr>
+
+<ul>
+    <li>
+        Git hooks are custom scripts or programs that user can set up to be automatically executed at specific points in the Git version control process.
+    </li>
+    <li>
+        These scripts allow user to automate tasks, enforce coding standards, perform pre-commit checks, send notifications, and more. 
+    </li>
+    <li>There are two types of hooks present in Git.
+        <ol>
+            <li>Client-Side Hooks</li>
+            <li>Server-Side Hooks</li>
+        </ol>
+    </li>
+
+</ul>
+<br>
+
+<h5>Client-Side Hooks</h5>
+<ul>
+    <li>pre commit, prepare-commit-msg, commit-msg, post-commit, post-checkout, pre-rebase.</li>
+</ul>
+
+<h5>Server-Side Hooks</h5>
+<ul>
+    <li>pre-receive, update, post-receive.</li>
+</ul>
+
+<br>
+
+<h2> How to use Git Hooks ?</h2>
+<hr>
+
+<ol>
+    <li>Navigate to Your Git Repository.</li>
+    <li>Locate the Hooks Directory:  <code>cd </code>/path/to/your/repo/.git/hooks</li>
+    <li>Choose or Create a Hook Script.</li>
+    <li>Write Your Hook Script: To create a custom pre-commit hook, you can create a file named pre-commit in the hooks directory</li>
+    <li>Customize Your Script.</li>
+    <li>Testing (Optional).</li>
+    <li>Commit Your Changes:</li>
+    <pre>
+    git add .git/hooks/pre-commit
+    git commit -m "Add custom pre-commit hook"
+    </pre>
+    <li>Finally you can use the Hook.</li>
+</ol>
