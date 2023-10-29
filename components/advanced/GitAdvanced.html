@@ -77,3 +77,108 @@
     </pre>
     <li>Finally you can use the Hook.</li>
 </ol>
+
+
+<!-- Cherry Picking -->
+<br>
+<h2>3. Cherry Picking</h2>
+<hr>
+<ul>
+    <li>Cherry Picking means selectively using data that supports a specific viewpoint while ignoring contradictory evidence.
+    </li>
+
+    <li>Leads to presenting an incomplete or biased view of a subject, leading to misunderstandings.
+    </li>
+
+    <li>Considered a logical fallacy, undermining the credibility of an argument or individual.
+    </li>
+
+    <li>Contributes to the spread of misinformation and misinterpretation of issues.
+    </li>
+
+    <li>Should be avoided by conducting a comprehensive analysis that includes all relevant data and evidence.</li>
+</ul>
+
+<br>
+<h2>How to Avoid Cherry Picking?</h2>
+<hr>
+
+<ul>
+    <li>Conduct thorough research: Gather a wide range of sources and data to get a holistic understanding of the topic.
+    </li>
+
+    <li>Acknowledge opposing viewpoints: Consider and address conflicting evidence or perspectives to provide a balanced analysis.
+    </li>
+
+    <li>Use systematic approaches: Employ standardized methodologies or protocols for data collection and analysis to minimize biases.
+    </li>
+
+    <li>Engage peer review: Encourage feedback from peers or experts in the field to ensure the objectivity and integrity of your work.
+    </li>
+
+    <li>Be transparent: Clearly communicate the methodology and sources used, along with any limitations or constraints, to maintain transparency and trustworthiness.</li>
+</ul>
+
+<br>
+
+<!--Git Stash-->
+<h2>4. Git Stash</h2>
+<hr>
+<ul>
+    <li><b>'git stash'</b> is a Git command used to temporarily store changes that are not ready to be committed to the repository.
+    </li>
+
+    <li>It allows you to store modified tracked files and staged changes without committing them, enabling you to work on a different branch or address an urgent issue.
+    </li>
+
+    <li>Stashed changes can later be reapplied or removed using the <b>'git stash apply'</b> or <b>'git stash drop'</b> commands, respectively.
+    </li>
+
+    <li>Multiple stashes can be created, and you can apply changes from a specific stash by referencing its index.
+    </li>
+
+    <li>
+        It's a helpful tool for managing unfinished changes, allowing developers to switch contexts or deal with urgent matters without the need for a permanent commit.
+    </li>
+</ul>
+
+
+<br>
+<h2>How to use git stash?</h2>
+<hr>
+<ol>
+    <li>Stash your changes: Use git stash to store your modifications. This command will stash both staged and unstaged changes.
+    <pre>
+        git stash
+    </pre>
+    </li>
+
+    <li>View your stashed changes: You can use <b>'git stash list'</b> to view the list of stashes you've created
+    <pre>
+        git stash list
+    </pre>
+    </li>
+
+    <li>Apply stashed changes: To reapply your stashed changes, you can use <b>'git stash apply'</b>. This will reapply the most recent stash.
+    <pre>
+        git stash apply
+    </pre>
+    </li>
+
+    <li>Apply a specific stash: If you have multiple stashes, you can specify the stash by index using <b>'git stash apply'</b> followed by the stash reference (e.g., <b>'git stash apply stash@{2}'</b>).
+    <pre>
+        git stash apply <-stash@{index}->
+    </pre>
+    </li>
+
+    <li>
+        Remove stashed changes: You can use <b>'git stash drop'</b> to remove the most recent stash, or specify a specific stash to drop using its index.
+    <pre>
+        git stash drop
+        git stash drop <-stash@{index}->
+    </pre>
+    </li>
+    
+
+</ol>
+<br>
